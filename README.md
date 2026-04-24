@@ -13,7 +13,7 @@ where folder-name is the project directory
 App.jsx in a div with id = App.
 - App.jsx is imported at the top of the file.
 - App component is rendered inside the main.jsx using `<App />`
-- JSX is JavaScript eXtension
+- JSX is JavaScript Syntax eXtension: allows user to HTML like markup directly into javascript files.
 - Name of each component starts with a Capital letter, for example, App.jsx or App.tsx
 - We can additional componets which needs to be imported inside the App.jsx file before using.
 - For instance, `src/components/Navbar.jsx` is the component containing the navbar. A component can return only a single element inside the return method.
@@ -24,3 +24,9 @@ App.jsx in a div with id = App.
 - We can pass data into the components using props, for eg:
 `const Hero = ({title="React based Job Posting Site", subTitle="React Crash Course"}) => {
   return () }` where title and subTitle are the props, which are used by the Hero card.
+- Checkout the `Card` component which is used with Start and End pair. It uses `{children}`. We can display child elements inside the Card component using `{children}` props.
+
+## 3. Hooks
+- useState is a hook: It is used to store the state of a component.
+- States are of two types: component and global
+- `-Step 1: import {useState} from react; Step 2: const [showMore, setShowMore] = useState(false)`
