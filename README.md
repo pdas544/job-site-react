@@ -30,3 +30,25 @@ App.jsx in a div with id = App.
 - useState is a hook: It is used to store the state of a component.
 - States are of two types: component and global
 - `-Step 1: import {useState} from react; Step 2: const [showMore, setShowMore] = useState(false)`
+- Checkout `src/components/JobListing.jsx` for the usage
+
+## 4. Routing, Pages, Layout
+- Since React JS is a library, it does not have backend abilities such as Routing, Authentication, etc.
+- Another library `react-router-dom` needs to be installed to implement Routing
+- **Step-1:** `npm i react-router-dom`
+- **Step-2:** `import { BrowserRouter } from 'react-router-dom'` in the `main.jsx`
+- **Step-3:**  Wrap the `<App/>` component with `<BrowserRouter />` component.
+```
+<BrowserRouter>
+  <App />
+</BrowserRouter>
+```
+
+- **Step-4:** Use Routes inside the `App.jsx` file as below:
+```
+  <Routes>
+        <Route path="/" element={<MainLayout />}>
+            <Route index element={<HomePage />} />
+        </Route>
+  </Routes>
+```
