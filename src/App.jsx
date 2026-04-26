@@ -1,8 +1,7 @@
-import Navbar from "./components/Navbar"
-import Hero from "./components/Hero"
-import HomeCards from "./components/HomeCards"
-import JobListings from "./components/JobListings"
-import ViewJobs from "./components/ViewJobs"
+import {Routes, Route} from 'react-router-dom';
+import MainLayout from './layouts/MainLayout';
+import HomePage from "./pages/HomePage";
+import JobsPage from "./pages/JobsPage";
 
 
 function App() {
@@ -11,12 +10,12 @@ function App() {
   return (
     <>
       
-    <Navbar />
-   <Hero/>
-    <HomeCards />
-    <JobListings />
-    
-    <ViewJobs />
+    <Routes>
+        <Route path="/" element={<MainLayout />}>
+            <Route index element={<HomePage />} />
+            
+        </Route>
+      </Routes>
    
     </>
   )
