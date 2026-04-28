@@ -32,6 +32,7 @@ App.jsx in a div with id = App.
 - `-Step 1: import {useState} from react; Step 2: const [showMore, setShowMore] = useState(false)`
 - Checkout `src/components/JobListing.jsx` for the usage
 
+
 ## 4. Routing, Pages, Layout
 - Since React JS is a library, it does not have backend abilities such as Routing, Authentication, etc.
 - Another library `react-router-dom` needs to be installed to implement Routing
@@ -52,3 +53,14 @@ App.jsx in a div with id = App.
         </Route>
   </Routes>
 ```
+
+## 5. Hooks - Revisited, JSON-Server, API calls
+- `useState()`: component can remember values between renders
+- `JobListings.jsx`: When the component loads, `jobs = empty array`, `setLoading = false`.
+- When state changes, React redraws the component with new values and calls useState().
+- `useEffect()`: to run something after rendering of the component.
+- use when we want to talk to outside world, for eg: API calls, timers, DOM, etc.
+- In `JobListings.jsx` to fetch jobs from API calls. `[]: dependency array` is required, otherwise, infinite loop.
+- New package `json-server` is installed and emulate back-end behavior
+- Check package.json => `scripts->server` and vite.config.js => `proxy`. To run server `npm run server` and then
+- Jobs are fetched using RESTFul APIs, for eg: `http://localhost:5000/jobs` gives all jobs in src/jobs.json
