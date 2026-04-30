@@ -64,3 +64,25 @@ App.jsx in a div with id = App.
 - New package `json-server` is installed and emulate back-end behavior
 - Check package.json => `scripts->server` and vite.config.js => `proxy`. To run server `npm run server` and then
 - Jobs are fetched using RESTFul APIs, for eg: `http://localhost:5000/jobs` gives all jobs in src/jobs.json
+
+## 6. Routing, DataLoading
+- BrowserRouter does not support route loaders.
+- using Route, RouterProvider, createBrowserRouter, createRoutesFromElements modules for routing and data loading.
+- a `router` variable is created using createBrowserRouter() function which takes createRoutesFromElements() as the parameter.
+- createRoutesFromElements() takes `<Route />` as the parameter
+- 
+```
+<Route path="/" element={<MainLayout />}>
+      <Route index element={<HomePage />} />
+      <Route path="jobs" element={<JobsPage />} />
+      <Route path="jobs/:id" element={<JobPage />} loader={jobLoader} />
+      <Route path="*" element={<NotFoundPage />} />
+    </Route>
+function App() {
+  return (
+    <RouterProvider router={router} />
+  );
+}
+```
+- JobPage uses the `useLoaderData` hook to pass the data to the `params` variable which is then used to fetch and load the data in `jobLoader` asynchronously. It needs to be exported alongwith the JobPage component `export {JobPage as default, jobLoader};`
+- NOTE: return statement in the component must not containt line-break or blank-space. If present, browser displays blank without any error.
