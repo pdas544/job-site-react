@@ -86,3 +86,9 @@ function App() {
 ```
 - JobPage uses the `useLoaderData` hook to pass the data to the `params` variable which is then used to fetch and load the data in `jobLoader` asynchronously. It needs to be exported alongwith the JobPage component `export {JobPage as default, jobLoader};`
 - NOTE: return statement in the component must not containt line-break or blank-space. If present, browser displays blank without any error.
+
+## 7. useNavigate Hook, Add New Job
+- `AddJobPage.jsx` is added. Allows the user to add a new job to the json file.
+- `useNavigate()` hook allows to redirect the user to a specific page/component.
+- `AddJobPage.jsx` uses `submitNewJob` function to pass the user input to the Parent `App.jsx` component i.e. **Passing data from Child component to the Parent component**
+- Each input field in the `AddJobPage` component uses two attributes `value={}` and `onChange(e)`

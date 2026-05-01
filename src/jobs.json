@@ -1,5 +1,5 @@
 {
-  "jobs":[
+  "jobs": [
     {
       "id": "1",
       "title": "Senior React Developer",
@@ -83,6 +83,21 @@
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
       }
+    },
+    {
+      "title": "Test Job 1",
+      "type": "Full-Time",
+      "description": "This is a test job description. It contains multiple lines without any logic. This is a test job description. It contains multiple lines without any logic. This is a test job description. It contains multiple lines without any logic. This is a test job description. It contains multiple lines without any logic.",
+      "location": "Bhubaneswar, India",
+      "salary": "Under $50K",
+      "company": {
+        "name": "ABC Telecom",
+        "description": "This is a test job description. It contains multiple lines without any logic.This is a test job description. It contains multiple lines without any logic.This is a test job description. It contains multiple lines without any logic.",
+        "contactEmail": "test@test.com",
+        "contactPhone": "1234567890"
+      },
+      "id": "GcLoiB0hdKQ"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
