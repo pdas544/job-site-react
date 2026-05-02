@@ -58,12 +58,12 @@ App.jsx in a div with id = App.
 - `useState()`: component can remember values between renders
 - `JobListings.jsx`: When the component loads, `jobs = empty array`, `setLoading = false`.
 - When state changes, React redraws the component with new values and calls useState().
-- `useEffect()`: to run something after rendering of the component.
-- use when we want to talk to outside world, for eg: API calls, timers, DOM, etc.
+- `useEffect()`: to run something after rendering of the component. For eg: API calls, timers, DOM, etc.
 - In `JobListings.jsx` to fetch jobs from API calls. `[]: dependency array` is required, otherwise, infinite loop.
 - New package `json-server` is installed and emulate back-end behavior
 - Check package.json => `scripts->server` and vite.config.js => `proxy`. To run server `npm run server` and then
-- Jobs are fetched using RESTFul APIs, for eg: `http://localhost:5000/jobs` gives all jobs in src/jobs.json
+- Jobs are fetched using RESTFul APIs, for eg: `/api/jobs` gives all jobs in src/jobs.json
+- Proxy is defined in `vite.config.js`. Therefore, endpoints can be accessed using `/api/jobs`
 
 ## 6. Routing, DataLoading
 - BrowserRouter does not support route loaders.
@@ -92,3 +92,8 @@ function App() {
 - `useNavigate()` hook allows to redirect the user to a specific page/component.
 - `AddJobPage.jsx` uses `submitNewJob` function to pass the user input to the Parent `App.jsx` component i.e. **Passing data from Child component to the Parent component**
 - Each input field in the `AddJobPage` component uses two attributes `value={}` and `onChange(e)`
+
+## 8. Delete and Update an existing Job
+- `EditJobPage.jsx` which takes the id and displays the data using useState() hook.
+- `submitUpdateJob(updatedJob)` function which takes `updatedJob` object and pass it to the parent component `App.jsx` which calls the `/api/jobs` with the object and PUT method to update the existing job.
+- `JobPage.jsx` has the delete button which calls the `onDelete()` function which in turn calls the `deleteJob(jobId)` and gets passed to the parent component which triggers the delete operation. 

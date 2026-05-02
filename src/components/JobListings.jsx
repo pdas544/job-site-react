@@ -14,6 +14,8 @@ const JobListings = ({isHome = false}) => {
   useEffect(() => {
     //fetch the data using async
     const fetchJobs = async () => { 
+
+      //retrieve the data and paginate
       const apiURL = isHome ? 
       '/api/jobs?_page=1&_per_page=3' 
       : '/api/jobs';
@@ -21,6 +23,7 @@ const JobListings = ({isHome = false}) => {
         const res = await fetch(apiURL);
         const data = await res.json();
 
+        //the data returned by the json server is in the format {data: [...]} so we need to extract the array from the data object
         const jobsData = Array.isArray(data) ? data : data.data || [];
         setJobs(jobsData);
       }
